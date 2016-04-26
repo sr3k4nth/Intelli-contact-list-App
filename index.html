@@ -1,0 +1,82 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <title>Teacher Registration</title>
+</head>
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <h1>Teacher Registration</h1>
+<label>search: </label>
+    <input ng-model="query" placeholder="Search for artists" autofocus>
+	<br>
+	<br>
+	
+    <table class="table">
+      <thead>
+        <tr>
+		        <th>uid</th> 
+<br>
+          <th>Name</th> 
+<br>
+		  <th>Department</th> 
+<br>
+          <th>Email</th>
+		  <br>
+
+          <th>Number</th>
+
+<br>          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+		<td><input class="form-control" ng-model="teacher.uid"></td>
+          <td><input class="form-control" ng-model="teacher.name"></td>
+		  <td><input class="form-control" ng-model="teacher.dept"></td>
+          <td><input class="form-control" ng-model="teacher.email"></td>
+          <td><input class="form-control" ng-model="teacher.number"></td>
+		  
+          <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="teacher in contactlist | filter: query " >
+		    <td>{{teacher.uid}}</td>
+          <td>{{teacher.name}}</td>
+		   <td>{{teacher.dept}}</td>
+          <td>{{teacher.email}}</td>
+          <td>{{teacher.number}}</td>
+          <td><button class="btn btn-danger" ng-click="remove(teacher._id)">Remove</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(teacher._id)">Edit</button></td>
+       
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+
+
+
+	   </tr>
+      </tbody>
+    </table>
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
